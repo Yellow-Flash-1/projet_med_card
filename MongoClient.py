@@ -37,7 +37,7 @@ epoch= lambda ch: int(datetime.strptime(ch, DATE_FORMAT).timestamp())
 # Create a connection
 
 
-if False:
+if True:
     client = MongoClient("mongodb+srv://stage:stage@stage.ldsvqma.mongodb.net/?retryWrites=true&w=majority&appName=stage", server_api=server_api.ServerApi('1'))
 else:
     import os
