@@ -254,19 +254,15 @@ def change_id(old_id):
 
 
 if __name__ == '__main__':
-    with open(ERROR_LOG, mode='a') as f:
-        try:
-            # app.run(host='0.0.0.0', port=5000)
-            app.run(
-                host='0.0.0.0',
-                use_debugger=False,
-                passthrough_errors=True,
-                debug=True,
-                use_reloader=True,
-            )
-        except KeyboardInterrupt:
-            print("Server stopped with CTRL+C")
-        except Exception as _:
-            f.write(datetime.now().strftime("%Y%m%d%H%M%S") + "  ")
-            print_exc(file=f)
+    try:
+        # app.run(host='0.0.0.0', port=5000)
+        app.run(
+            host='0.0.0.0',
+            use_debugger=False,
+            passthrough_errors=True,
+            debug=True,
+            use_reloader=True,
+        )
+    except KeyboardInterrupt:
+        print("Server stopped with CTRL+C")
 
